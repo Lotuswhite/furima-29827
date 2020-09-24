@@ -12,25 +12,25 @@
 | first_name        | string    | null:false  |
 | family_name_kana  | string    | null:false  |
 | first_name_kana   | string    | null:false  |
-| birthday          | integer   | null:false  |
+| birthday          | date      | null:false  |
 
 ### Association
 
 -has_many:items
--has_many:order
+-has_many:orders
 
 ## items テーブル
 
 | column              | type      | options                         |
 |-------------------- |---------  |-------------------------------  |
-| item-name           | string    | null:false                      |
-| item-info           | text      | null:false                      |
+| name                | string    | null:false                      |
+| info                | text      | null:false                      |
 | category_id         | integer   | null:false                      |
 | status_id           | integer   | null:false                      |
 | shopping_status_id  | integer   | null:false                      |
 | prifecture_id       | integer   | null:false                      |
 | scheduled_id        | integer   | null:false                      |
-| item-price          | integer   | null:false                      |
+| price               | integer   | null:false                      |
 | users_id            | integer   | null:false, foreign_key: true   |
 
 ### Association
@@ -42,8 +42,8 @@
 
 | column    | type      | options                         |
 |---------- |---------  |-------------------------------  |
-| users_id  | integer   | null:false, foreign_key: true   |
-| items_id  | integer   | null:false, foreign_key: true   |
+| user_id   | integer   | null:false, foreign_key: true   |
+| item_id   | integer   | null:false, foreign_key: true   |
 
 ### Association
 
@@ -55,13 +55,13 @@
 
 | column        | type      | options                         |
 |-------------  |---------  |-------------------------------  |
-| post number   | integer   | null:false                      |
+| post_number   | string    | null:false                      |
 | state_id      | integer   | null:false                      |
 | city          | string    | null:false                      |
 | housenumber   | integer   | null:false                      |
 | housename     | string    |                                 |
-| phonenumber   | integer   | null:false                      |
-| orders_id     | integer   | null:false, foreign_key: true   |
+| phonenumber   | string    | null:false                      |
+| order_id     | integer   | null:false, foreign_key: true   |
 
 ### Association
 
