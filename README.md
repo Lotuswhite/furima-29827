@@ -31,7 +31,7 @@
 | prifecture_id       | integer   | null:false                      |
 | scheduled_id        | integer   | null:false                      |
 | price               | integer   | null:false                      |
-| users_id            | integer   | null:false, foreign_key: true   |
+| user_id             | integer   | null:false, foreign_key: true   |
 
 ### Association
 
