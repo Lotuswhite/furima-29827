@@ -80,6 +80,30 @@ describe User do
         expect(@user.errors.full_messages).to include("First name kana can't be blank")
       end
 
+      it 'family_nameは全角でないと登録できないこと' do
+        @user.family_name = 'suzuki'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Family name is invalid")
+      end
+
+      it 'first_nameは全角でないと登録できないこと' do
+        @user.first_name = 'mai'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name is invalid")
+      end
+
+      it 'family_name_kanaは全角でないと登録できないこと' do
+        @user.family_name_kana = 'すずき'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("Family name kana is invalid")
+      end
+
+      it 'first_name_kanaは全角でないと登録できないこと' do
+        @user.first_name_kana = 'まい'
+        @user.valid?
+        expect(@user.errors.full_messages).to include("First name kana is invalid")
+      end
+
       it 'birthdayが空では登録できないこと' do
         @user.birthday = ''
         @user.valid?
