@@ -92,13 +92,13 @@ describe User do
         expect(@user.errors.full_messages).to include("First name is invalid")
       end
 
-      it 'family_name_kanaは全角でないと登録できないこと' do
+      it 'family_name_kanaはカタカナでないと登録できないこと' do
         @user.family_name_kana = 'すずき'
         @user.valid?
         expect(@user.errors.full_messages).to include("Family name kana is invalid")
       end
 
-      it 'first_name_kanaは全角でないと登録できないこと' do
+      it 'first_name_kanaはカタカナでないと登録できないこと' do
         @user.first_name_kana = 'まい'
         @user.valid?
         expect(@user.errors.full_messages).to include("First name kana is invalid")
