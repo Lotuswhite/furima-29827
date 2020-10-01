@@ -17,10 +17,9 @@ class Item < ApplicationRecord
   validates :prifecture_id, numericality: { other_than: 0 }
   validates :scheduled_id, numericality: { other_than: 0 }
 
-  VALID_PRICE_REGEX = /\A[a-z0-9]+\z/i
-  validates :price, inclusion: {in: 300..9999999 }, format: {with: VALID_PRICE_REGEX} 
+  VALID_PRICE_REGEX = /\A[a-z0-9]+\z/i.freeze
+  validates :price, inclusion: { in: 300..9_999_999 }, format: { with: VALID_PRICE_REGEX }
 
   belongs_to :user
   has_one_attached :image
-
 end

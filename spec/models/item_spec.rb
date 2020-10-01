@@ -26,39 +26,39 @@ describe User do
       end
 
       it 'infoが空では出品できないこと' do
-       @item.info = ''
-       @item.valid?
-       expect(@item.errors.full_messages).to include("Info can't be blank")
+        @item.info = ''
+        @item.valid?
+        expect(@item.errors.full_messages).to include("Info can't be blank")
       end
 
       it 'category_idが_ _だと出品できないこと' do
         @item.category_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Category must be other than 0")
+        expect(@item.errors.full_messages).to include('Category must be other than 0')
       end
 
       it 'status_idが_ _だと出品できないこと' do
         @item.status_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Status must be other than 0")
+        expect(@item.errors.full_messages).to include('Status must be other than 0')
       end
 
       it 'shopping_status_idが_ _ だと出品できないこと' do
         @item.shopping_status_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Shopping status must be other than 0")
+        expect(@item.errors.full_messages).to include('Shopping status must be other than 0')
       end
 
       it 'prifecture_idが_ _だと出品できないこと' do
         @item.prifecture_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Prifecture must be other than 0")
+        expect(@item.errors.full_messages).to include('Prifecture must be other than 0')
       end
 
       it 'scheduled_idが_ _だと出品できないこと' do
         @item.scheduled_id = '0'
         @item.valid?
-        expect(@item.errors.full_messages).to include("Scheduled must be other than 0")
+        expect(@item.errors.full_messages).to include('Scheduled must be other than 0')
       end
 
       it 'priceが空では出品できないこと' do
@@ -70,29 +70,14 @@ describe User do
       it 'priceが半角数字でないと出品できない' do
         @item.price = '１２３４５'
         @item.valid?
-        expect(@item.errors.full_messages).to include ("Price is not included in the list")
+        expect(@item.errors.full_messages).to include 'Price is not included in the list'
       end
 
       it '価格の範囲が、¥300~¥9,999,999の間でないと出品できない' do
         @item.price = '100'
         @item.valid?
-        expect(@item.errors.full_messages).to include ("Price is not included in the list")
+        expect(@item.errors.full_messages).to include 'Price is not included in the list'
       end
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     end
   end
 end
-

@@ -26,9 +26,10 @@ class ItemsController < ApplicationController
     @item.update(item_params)
     redirect_to root_path
   end
+
   private
 
   def item_params
-    params.require(:item).permit(:name, :info, :image, :category_id, :status_id, :shopping_status_id, :prifecture_id, :scheduled_id, :price ).merge(user_id: current_user.id)
+    params.require(:item).permit(:name, :info, :image, :category_id, :status_id, :shopping_status_id, :prifecture_id, :scheduled_id, :price).merge(user_id: current_user.id)
   end
 end
