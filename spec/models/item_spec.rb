@@ -75,6 +75,7 @@ describe User do
 
       it '価格の範囲が、¥300~¥9,999,999の間でないと出品できない' do
         @item.price = '100'
+        @item.price = '10000000'
         @item.valid?
         expect(@item.errors.full_messages).to include 'Price is not included in the list'
       end
