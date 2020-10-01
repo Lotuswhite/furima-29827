@@ -70,14 +70,20 @@ describe User do
       it 'priceが半角数字でないと出品できない' do
         @item.price = '１２３４５'
         @item.valid?
-        expect(@item.errors.full_messages).to include 'Price is not included in the list'
+        expect(@item.errors.full_messages).to include ('Price is not included in the list')
       end
 
-      it '価格の範囲が、¥300~¥9,999,999の間でないと出品できない' do
-        @item.price = '100'
+      it '価格の範囲が、¥300以下だと出品できない' do
+        @item.price = '299'
+        @item.valid?
+        binding.pry
+        expect(@item.errors.full_messages).to include ('Price is not included in the list')
+      end
+
+      it '価格の範囲が、¥9,999,999以上だと出品できない' do
         @item.price = '10000000'
         @item.valid?
-        expect(@item.errors.full_messages).to include 'Price is not included in the list'
+        expect(@item.errors.full_messages).to include ('Price is not included in the list')
       end
     end
   end

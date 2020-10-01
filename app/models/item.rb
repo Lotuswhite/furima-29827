@@ -13,11 +13,8 @@ class Item < ApplicationRecord
   with_options presence: true, format: { with: /\A[a-z0-9]+\z/i.freeze } do
     validates :price, inclusion: { in: 300..9_999_999 }
   end
-  validates :category_id, numericality: { other_than: 0 }
-  validates :status_id, numericality: { other_than: 0 }
-  validates :shopping_status_id, numericality: { other_than: 0 }
-  validates :prifecture_id, numericality: { other_than: 0 }
-  validates :scheduled_id, numericality: { other_than: 0 }
+  
+  validates :category_id,:status_id,:shopping_status_id,:prifecture_id,:scheduled_id, numericality: { other_than: 0 }
   
   belongs_to :user
   has_one_attached :image
