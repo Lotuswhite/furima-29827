@@ -76,7 +76,6 @@ describe User do
       it '価格の範囲が、¥300以下だと出品できない' do
         @item.price = '299'
         @item.valid?
-        binding.pry
         expect(@item.errors.full_messages).to include ('Price is not included in the list')
       end
 
