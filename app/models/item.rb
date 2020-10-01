@@ -6,9 +6,9 @@ class Item < ApplicationRecord
   belongs_to_active_hash :day
   belongs_to_active_hash :state
 
-  validates :image, :name, :info, presence: true
+  validates :image, :name, :info, :price, presence: true
 
-  with_options presence: true, format: { with: /\A[a-z0-9]+\z/i.freeze } do
+  with_options format: { with: /\A[a-z0-9]+\z/i.freeze } do
     validates :price, inclusion: { in: 300..9_999_999 }
   end
 
