@@ -1,5 +1,5 @@
 require 'rails_helper'
 
-RSpec.describe Area, type: :model do
+RSpec.describe Scheduled, type: :model do
   pending "add some examples to (or delete) #{__FILE__}"
 end
