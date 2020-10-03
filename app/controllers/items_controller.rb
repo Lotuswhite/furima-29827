@@ -40,10 +40,6 @@ class ItemsController < ApplicationController
     else
       render :edit 
   end
-  def destroy
-   @item.destroy
-   redirect_to root_path
-  end
 
 
   private
