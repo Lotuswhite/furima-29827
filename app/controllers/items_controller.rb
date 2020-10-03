@@ -33,10 +33,16 @@ class ItemsController < ApplicationController
     end
   end
 
+
   def destroy
     @item.destroy
     redirect_to root_path
   end
+  def destroy
+   @item.destroy
+   redirect_to root_path
+  end
+
 
   private
 
