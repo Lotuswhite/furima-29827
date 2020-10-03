@@ -1,4 +1,4 @@
 FactoryBot.define do
-  factory :day do
+  factory :shopping_status do
   end
 end

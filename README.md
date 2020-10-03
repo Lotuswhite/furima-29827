@@ -56,7 +56,7 @@
 | column        | type      | options                         |
 |-------------  |---------  |-------------------------------  |
 | post_number   | string    | null:false                      |
-| state_id      | integer   | null:false                      |
+| status_id     | integer   | null:false                      |
 | city          | string    | null:false                      |
 | housenumber   | integer   | null:false                      |
 | housename     | string    |                                 |

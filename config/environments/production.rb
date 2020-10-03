@@ -62,9 +62,9 @@ Rails.application.configure do
 
   config.action_mailer.perform_caching = false
 
-  # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  # Ignore bad email addresses and do not raise email shopping_status errors.
+  # Set this to true and configure the email server for immediate shopping_status to raise shopping_status errors.
+  # config.action_mailer.raise_shopping_status_errors = false
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).

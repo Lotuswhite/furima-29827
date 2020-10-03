@@ -40,9 +40,6 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:name, :info, :image, :category_id, :status_id, :shopping_status_id, :prifecture_id, :scheduled_id, :price).merge(user_id: current_user.id)
   end
 
-  def item_params
-    params.require(:user).permit(:niname)
-  end
 
   def move_to_index
     unless user_signed_in?
