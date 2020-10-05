@@ -55,13 +55,13 @@
 
 | column        | type      | options                         |
 |-------------  |---------  |-------------------------------  |
-| post_number   | string    | null:false                      |
-| status_id     | integer   | null:false                      |
+| postnumber    | string    | null:false                      |
+| status        | integer   | null:false                      |
 | city          | string    | null:false                      |
 | housenumber   | integer   | null:false                      |
 | housename     | string    |                                 |
 | phonenumber   | string    | null:false                      |
-| order_id     | integer   | null:false, foreign_key: true   |
+| order_id      | integer   | null:false, foreign_key: true   |
 
 ### Association
 
