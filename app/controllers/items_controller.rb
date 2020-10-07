@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  
   before_action :set_item, only: [:edit, :show, :update, :destroy]
 
   def index
@@ -34,7 +33,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
   def destroy
     if @item.destroy
       redirect_to root_path
@@ -42,7 +40,6 @@ class ItemsController < ApplicationController
       render :show
     end
   end
-
 
   private
 

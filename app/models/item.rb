@@ -14,9 +14,8 @@ class Item < ApplicationRecord
 
   validates :category_id, :status_id, :shopping_status_id, :prifecture_id, :scheduled_id, numericality: { other_than: 0 }
 
-  #Association
+  # Association
   belongs_to :user
   has_one :order
   has_one_attached :image
-
 end
