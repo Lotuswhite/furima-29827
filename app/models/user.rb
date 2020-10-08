@@ -17,5 +17,7 @@ class User < ApplicationRecord
   end
   validates :birthday, presence: true
 
+  # Association
   has_many :items
+  has_many :orders
 end
