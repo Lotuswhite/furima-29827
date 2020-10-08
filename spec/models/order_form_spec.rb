@@ -69,7 +69,7 @@ RSpec.describe OrderForm, type: :model do
       expect(@order_form.errors.full_messages).to include('Postnumber is invalid. Include hyphen(-)')
     end
 
-    it 'phonenumberが11桁以内では購入できないこと' do
+    it 'phonenumberが11桁以上では購入できないこと' do
       @order_form.phonenumber = '123456789012'
       @order_form.valid?
       expect(@order_form.errors.full_messages).to include('Phonenumber is invalid')
