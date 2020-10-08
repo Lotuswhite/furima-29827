@@ -4,8 +4,8 @@ class OrdersController < ApplicationController
   before_action :set_item, only: [:index, :create]
 
   def index
-    # @item = Item.find(params[:item_id])
     @order = OrderForm.new
+    
   end
 
   def new
@@ -32,10 +32,10 @@ class OrdersController < ApplicationController
 
   def move_to_index
     @item = Item.find(params[:item_id])
-    redirect_to root_path if current_user.id == @item.user_id
-    # URLを直接入力して購入済み商品の購入ページへ遷移しようとすると、トップページに遷移すること
-    # @order = Item.find(params[:item_id])
-    # redirect_to root_path if current_user.id == @order.user_id
+      # URLを直接入力して購入済み商品の購入ページへ遷移しようとすると、トップページに遷移すること
+    if current_user.id == @item.user_id || @item.order.present?
+      redirect_to root_path
+    end
   end
 
   def pay_item

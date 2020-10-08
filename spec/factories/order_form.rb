@@ -8,10 +8,6 @@ FactoryBot.define do
     housename                      { 'ビル' }
     phonenumber                    { '12345678901' }
 
-    # after(:build) do |item|
-    #   item.image.attach(io: File.open('public/images/furima-intro01.png'), filename: 'furima-intro01.png')
-    # end
-
     association :user
     association :item
   end

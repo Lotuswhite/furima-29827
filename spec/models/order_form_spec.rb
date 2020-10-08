@@ -51,10 +51,10 @@ RSpec.describe OrderForm, type: :model do
       expect(@order_form.errors.full_messages).to include("Housenumber can't be blank")
     end
 
-    it 'housenameが空では購入できないこと' do
+    it 'housenameが空でも購入できる' do
       @order_form.housename = nil
       @order_form.valid?
-      expect(@order_form.errors.full_messages).to include("Housename can't be blank")
+      expect(@order_form).to be_valid
     end
 
     it 'phonenumberが空では購入できないこと' do
